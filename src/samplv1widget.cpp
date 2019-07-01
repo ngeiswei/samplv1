@@ -1325,8 +1325,7 @@ void samplv1widget::updateOffsetLoop ( samplv1_sample *pSample, bool bDirty )
 		m_ui.Gen1LoopFadeCheckBox->setValue(iLoopFade > 0 ? 1.0f : 0.0f);
 		m_ui.Gen1LoopFadeSpinBox->setEnabled(bLoop && iLoopFade > 0);
 		m_ui.Gen1LoopFadeSpinBox->setMinimum(0);
-		m_ui.Gen1LoopFadeSpinBox->setMaximum(
-			qMin(iLoopStart, (iLoopEnd - iLoopStart) >> 1));
+		m_ui.Gen1LoopFadeSpinBox->setMaximum(qMin(iLoopStart, iLoopEnd - iLoopStart));
 		if (iLoopFade > 0) m_iLoopFade = iLoopFade;
 		m_ui.Gen1LoopFadeSpinBox->setValue(m_iLoopFade);
 		m_ui.Gen1LoopZeroCheckBox->setValue(bLoopZero ? 1.0f : 0.0f);
